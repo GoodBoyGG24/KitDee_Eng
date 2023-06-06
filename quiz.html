@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng-Eng</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/css/bg-style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="custom-text text-center text-warning">Basic Level</h1>
+    </header>
+    <main>
+        <div class="row justify-content-center">
+            <div class="col-6 ">
+                <ol>
+                    <div class="exersice">
+                        <li><label for="ex-1">What ____ your name?</label></li>
+                        <label>
+                            <input type="radio" name="answer1" value="is">is
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer1" value="am">am
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer1" value="are">are
+                        </label>
+                    </div>
+                    <div class="exersice">
+                        <li><label for="ex-1">How old ____ you?</label></li>
+                        <label>
+                            <input type="radio" name="answer2" value="is">is
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer2" value="am">am
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer2" value="are">are
+                        </label>
+                    </div>
+                    <div class="exersice">
+                        <li><label for="ex-1">Where ____ you live?</label></li>
+                        <label>
+                            <input type="radio" name="answer3" value="do">do
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer3" value="does">does
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="answer3" value="did">did
+                        </label>
+                    </div>
+                </ol>
+                <input type="submit" onclick="checkAnswer()" value="Submit">
+                <h1 id="score"> </h1>
+            </div>
+        </div>
+    </main>
+    <link rel="stylesheet" href="/bootstrap-5.0.2/dist/js/bootstrap.min.js">
+</body>
+
+</html>
+<script>
+    function checkAnswer() {
+        // Get the value of the selected checkboxes
+        var selectedAnswer1 = document.querySelector('input[name="answer1"]:checked').value;
+        var selectedAnswer2 = document.querySelector('input[name="answer2"]:checked').value;
+        var selectedAnswer3 = document.querySelector('input[name="answer3"]:checked').value;
+        var score = 0;
+        // Check if the selected answers are correct
+        if (selectedAnswer1 === 'is') {
+            // Increment the score by 1
+            score += 1;
+        }
+        if (selectedAnswer2 === 'are') {
+            // Increment the score by 1
+            score += 1;
+        }
+        if (selectedAnswer3 === 'do') {
+            // Increment the score by 1
+            score += 1;
+        }
+
+        // Update the score display
+        document.getElementById('score').textContent = score + " / 10";
+
+        
+    }
+</script>

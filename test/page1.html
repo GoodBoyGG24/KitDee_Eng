@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="page2.html" method="get">
+        <div class="container">
+            <ol>
+                <div class="exercise">
+                    <li><label for="ex-1">What ____ your name?</label></li>
+                    <label>
+                        <input type="radio" name="answer1" value="am">am
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="answer1" value="is">is
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="answer1" value="are">are
+                    </label>
+                </div>
+                <!-- =============================== -->
+                <div class="exercise">
+                    <li><label for="ex-1">How old ____ you?</label></li>
+                    <label>
+                        <input type="radio" name="answer2" value="is">is
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="answer2" value="am">am
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="answer2" value="are">are
+                    </label>
+                </div>
+            </ol>
+            <div id="rs"></div>
+            <button id="submitBtn">Submit</button>
+        </div>
+    </form>
+    <script>
+        function checkAnswer(){
+            let answer01 = document.querySelector('input[name="answer1"]:checked');
+            let answer02 = document.querySelector('input[name="answer2"]:checked');
+            let score = 0;
+            let answer = document.getElementsByClassName('exercise');
+
+                if (answer01.value === "is") {
+                    score += 50;
+                }
+                if (answer02.value === "are") {
+                    score += 50;
+                }
+                localStorage.setItem('score', score);
+         
+        }
+
+
+        document.getElementById('submitBtn').addEventListener('click', function(event){
+            event.preventDefault();
+            checkAnswer();
+            window.location.href = "page2.html?score=" + localStorage.getItem('score');
+        });
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="pic/spiderman.png" type="image/x-icon">
+    <style>
+        body{
+        background-color: purple;
+        background-image: linear-gradient(#6074ff, #ee67ff);
+        margin: 0;
+        padding: 0;
+        }
+        main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+        .container{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+        text-align: center;
+        max-width: 80%;
+        padding: 2rem;
+        }
+        h1{
+        color: red;
+        font-size: 2.5rem;
+        }
+        .text{
+        color:#6074ff;
+        }
+        a{
+        text-decoration: none;
+        }
+        p{
+        color: black;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        }
+
+
+        </style>
+</head>
+
+<body>
+    <main>
+        <a href="c2.html">
+            <div class="container">
+                <h1 class="text">Your score : </h1>
+                
+                <h1><span id="rs"></span><span class="text">/100</span></h1>
+                <h1 id="s"></h1>
+
+                <h1 class="text">Click to continue</h1>
+
+            </div>
+        </a>
+
+    </main>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+
+        // Display score
+        const scoreText = document.createTextNode(score);
+        let sc = document.getElementById("rs").appendChild(scoreText);
+    //    let sc = document.getElementById("rs").innerHTML = localStorage.getItem("score");
+       let result = document.getElementById("s");
+        // if(sc == 100){
+        //     show.innerHTML = "Great!!"
+        // }else if(sc >= 90){
+        //     show.innerHTML = "Good"
+        // }else if(sc >= 60){
+        //     show.innerHTML = "Nomal"
+        // }else if(sc >= 40){
+        //     show.innerHTML = "Not good enough"
+        // }else if(sc >= 30){
+        //     show.innerHTML = "Don't Give up"
+        // }else{
+        //     show.innerHTML = "Too bad~~~"
+        // }
+
+        if(score == 100){
+            result.innerHTML = "Excellent";
+        }else if(score >= 90){
+            result.innerHTML = "Good";
+        }else if(score >= 70){
+            result.innerHTML = "Don't Give up";
+        }else if(score >= 50){
+            result.innerHTML = "Normal";
+        }else if(score >= 30){
+            result.innerHTML = "Not bad";
+        }else if(score >= 10){
+            result.innerHTML = "Too bad";
+        }else{
+            result.innerHTML = "Too stupid~~~";
+        }
+    </script>
+</body>
+<!-- <script>
+    document.getElementById("rs").innerHTML = localStorage.getItem("score");
+</script> -->
+
+</html>

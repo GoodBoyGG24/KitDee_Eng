@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="rs"></h1>
+    <p id="s"></p>
+    <script>
+       let sc = document.getElementById("rs").innerHTML = localStorage.getItem("score");
+       let show = document.getElementById("s");
+        if(sc == 100){
+            show.innerHTML = "Great"
+        }else if(sc == 90){
+            show.innerHTML = "Good"
+        }else if(sc == 60){
+            show.innerHTML = "Nomal"
+        }else if(sc == 40){
+            show.innerHTML = "Not Bad"
+        }else if(sc == 30){
+            show.innerHTML = "Do Not Give up"
+        }else{
+            show.innerHTML = "Try again"
+        }
+    </script>
+</body>
+</html>
